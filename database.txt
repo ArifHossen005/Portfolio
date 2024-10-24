@@ -1,0 +1,329 @@
+01***contacts 
+-> fullName
+->email
+->phone
+->message
+->id 
+->created_at
+->updated_at
+
+
+
+02***seoproperties
+->id
+->pageName
+->title
+->keywords
+->description
+->ogSiteName
+->ogUrl
+->ogTitle
+->ogDescription
+->ogImage
+->created_at
+->updated_at
+
+03***heroproperties
+keyLine
+title
+short_title
+img
+id
+->created_at
+->updated_at
+
+04***educations
+duration
+institutionName
+field
+details
+id
+->created_at
+->updated_at
+
+
+05***socials
+twitterLink
+githubLink
+linkedinLink
+id
+->created_at
+->updated_at
+
+
+
+06***abouts
+title
+details
+id
+->created_at
+->updated_at
+
+07***projects
+title
+previewLink
+thumbnailLink
+details
+id
+->created_at
+->updated_at
+
+08***experiences
+duration
+title
+designation
+details
+id
+->created_at
+->updated_at
+
+09***skills
+name
+id
+->created_at
+->updated_at
+
+10***resumes
+downloadLink
+id
+->created_at
+->updated_at
+
+11***language
+name
+id
+->created_at
+->updated_at
+
+
+
+
+
+php artisan make:migration create_contacts_table
+
+php artisan make:migration create_experiences_table  
+
+php artisan make:migration create_educations_table
+
+php artisan make:migration create_skills_table
+
+php artisan make:migration create_languages_table
+
+php artisan make:migration create_resumes_table
+
+php artisan make:migration create_abouts_table
+
+php artisan make:migration create_projects_table
+
+php artisan make:migration create_seoproperties_table
+
+php artisan make:migration create_socials_table
+
+php artisan make:migration create_heroproperties_table
+
+
+php artisan migrate 
+php artisan serve 
+
+
+====contacts====
+            $table->string('fullName',100);
+            $table->string('email',50);
+            $table->string('phone',50);
+            $table->text('message');
+            $table->timestamp('created_at')->useCurrent();
+            $table->timestamp('updated_at')->useCurrent()->useCurrentOnUpdate();
+
+====Experiences===
+
+            $table->string('duration',50);
+            $table->string('title',50);
+            $table->string('designation',200);
+            $table->text('details');
+            $table->timestamp('created_at')->useCurrent();
+            $table->timestamp('updated_at')->useCurrent()->useCurrentOnUpdate();
+
+====Educations====
+
+            $table->string('duration',50);
+            $table->string('institutionName',50);
+            $table->string('field',200);
+            $table->text('details');
+            $table->timestamp('created_at')->useCurrent();
+            $table->timestamp('updated_at')->useCurrent()->useCurrentOnUpdate();
+       
+
+====skills====
+ $table->   string('name',100);
+            $table->timestamp('created_at')->useCurrent();
+            $table->timestamp('updated_at')->useCurrent()->useCurrentOnUpdate();
+
+
+====languages====
+            $table->string('name',100);
+            $table->timestamp('created_at')->useCurrent();
+            $table->timestamp('updated_at')->useCurrent()->useCurrentOnUpdate();
+
+====resumes====
+            $table->string('downloadLink',100);
+            $table->timestamp('created_at')->useCurrent();
+            $table->timestamp('updated_at')->useCurrent()->useCurrentOnUpdate();
+
+
+====abouts====
+            $table->string('title',100);
+            $table->text('details');
+            $table->timestamp('created_at')->useCurrent();
+            $table->timestamp('updated_at')->useCurrent()->useCurrentOnUpdate();
+
+====projects====
+ $table->   string('title',100);
+            $table->string('previewLink',300);
+            $table->string('thumbnailLink',300);
+            $table->text('details');
+            $table->timestamp('created_at')->useCurrent();
+            $table->timestamp('updated_at')->useCurrent()->useCurrentOnUpdate();
+
+====seoproperties====
+            $table->enum('pageName',['home', 'resume', 'projects','contact']);
+            $table->string('title',50);
+            $table->string('keywords',500);
+            $table->string('description',500);
+            $table->string('ogSiteName',100);
+            $table->string('ogUrl',100);
+            $table->string('ogTitle',100);
+            $table->string('ogDescription',500);
+            $table->string('ogImage',100);
+            $table->timestamp('created_at')->useCurrent();
+            $table->timestamp('updated_at')->useCurrent()->useCurrentOnUpdate();
+
+
+====socials===
+            $table->string('twitterLink',300);
+            $table->string('githubLink',300);
+            $table->string('linkedinLink',300);
+            $table->timestamp('created_at')->useCurrent();
+            $table->timestamp('updated_at')->useCurrent()->useCurrentOnUpdate();
+
+====heroproperties====
+
+            $table->string('keyLine',100);
+            $table->string('title',100);
+            $table->string('short_title',100);
+            $table->string('img',100);
+            $table->timestamp('created_at')->useCurrent();
+            $table->timestamp('updated_at')->useCurrent()->useCurrentOnUpdate();
+
+
+
+
+======Controller =====
+
+php artisan make:controller ContactController 
+php artisan make:controller HomeController 
+php artisan make:controller ProjectController 
+php artisan make:controller ResumeController 
+
+
+====Route====
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
